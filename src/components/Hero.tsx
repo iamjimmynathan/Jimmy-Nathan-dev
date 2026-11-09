@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import {
   ArrowDown,
   FileText,
+  Download,
+  Loader2,
   Mail,
   Github,
   Linkedin,
@@ -15,6 +17,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { PERSONAL_INFO, STATS } from '../data/portfolioData';
+import { downloadResumePdf } from '../utils/generatePdf';
 
 interface HeroProps {
   onOpenCV: () => void;
@@ -30,6 +33,7 @@ const ROLES = [
 export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
   const [roleIndex, setRoleIndex] = useState(0);
   const [fadeState, setFadeState] = useState<'in' | 'out'>('in');
+  const [isDownloading, setIsDownloading] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -104,11 +108,31 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
               </a>
 
               <button
-                onClick={onOpenCV}
-                className="inline-flex items-center gap-2 px-5 py-3.5 text-sm font-semibold text-slate-200 bg-slate-900/80 border border-slate-700/80 hover:border-cyan-400/50 hover:text-white rounded-xl shadow-sm hover:bg-slate-800/80 active:scale-[0.98] transition-all whitespace-nowrap"
+                onClick={async () => {
+                  setIsDownloading(true);
+                  try {
+                    await downloadResumePdf();
+                  } catch (e) {
+                    onOpenCV();
+                  } finally {
+                    setIsDownloading(false);
+                  }
+                }}
+                disabled={isDownloading}
+                className="inline-flex items-center gap-2 px-5 py-3.5 text-sm font-semibold text-slate-200 bg-slate-900/80 border border-slate-700/80 hover:border-cyan-400/50 hover:text-white rounded-xl shadow-sm hover:bg-slate-800/80 active:scale-[0.98] transition-all whitespace-nowrap disabled:opacity-60"
+                title="Download Jimmy Nathan's Resume as PDF"
               >
-                <FileText className="w-4 h-4 text-cyan-400" />
-                <span>Download CV</span>
+                {isDownloading ? (
+                  <>
+                    <Loader2 className="w-4 h-4 text-cyan-400 animate-spin" />
+                    <span>Generating PDF...</span>
+                  </>
+                ) : (
+                  <>
+                    <Download className="w-4 h-4 text-cyan-400" />
+                    <span>Download CV (.PDF)</span>
+                  </>
+                )}
               </button>
 
               <a
@@ -179,7 +203,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
 
           {/* Right Column: Portrait with Modern Geometric Framing */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[380px] aspect-square">
+            <div className="relative w-full max-w-[390px] aspect-[4/5] sm:aspect-[4/5]">
               {/* Outer decorative glowing geometric backdrop */}
               <div
                 aria-hidden="true"
@@ -196,10 +220,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
                   src={PERSONAL_INFO.portraitImage}
                   alt="Jimmy Nathan — Full-Stack & Mobile App Developer"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover object-[center_12%] hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 {/* Subtle gradient scrim at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-transparent opacity-50 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-transparent opacity-60 pointer-events-none" />
 
                 {/* In-Frame Accent Badge */}
                 <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/60 flex items-center justify-between">

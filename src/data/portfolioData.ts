@@ -12,13 +12,13 @@ export const PERSONAL_INFO = {
 
 Being self-taught has forged my resourcefulness, disciplined problem-solving ethos, and relentless drive to stay ahead of modern standards. Whether designing transactional database architectures, optimizing client bundle sizes, or deploying fluid mobile interfaces, I treat every project as an opportunity to deliver measurable business impact and bulletproof software reliability.`,
   socialLinks: {
-    github: 'https://github.com/jimmynathan',
-    linkedin: 'https://linkedin.com/in/jimmy-nathan',
-    twitter: 'https://twitter.com/jimmynathan_dev',
-    instagram: 'https://instagram.com/jimmynathan.dev',
+    github: 'https://github.com/iamjimmynathan',
+    linkedin: 'https://linkedin.com/in/hejimmynathan',
+    twitter: 'https://twitter.com/iamjimmynathan',
+    instagram: 'https://instagram.com/iamjimmynathan',
     whatsappUrl: 'https://wa.me/2349069952829?text=Hi%20Jimmy,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project!'
   },
-  portraitImage: '/src/assets/images/jimmy_nathan_portrait_1794213645145.jpg',
+  portraitImage: '/assets/aistudio/JPEG_20261001_083412_7493535283134284243_82993767.jpg',
 };
 
 export const STATS: StatItem[] = [
@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
     ],
     metrics: 'Sub-400ms API response time, 99.9% transfer confirmation rate',
     liveUrl: '#demo-apexpay',
-    githubUrl: 'https://github.com/jimmynathan/apexpay-mobile-core'
+    githubUrl: 'https://github.com/iamjimmynathan/apexpay-mobile-core'
   },
   {
     id: 'pulsewave-social',
@@ -87,7 +87,7 @@ export const PROJECTS: Project[] = [
     ],
     metrics: 'Over 10,000 simulated concurrent sockets with <50ms message latency',
     liveUrl: '#demo-pulsewave',
-    githubUrl: 'https://github.com/jimmynathan/pulsewave-social-app'
+    githubUrl: 'https://github.com/iamjimmynathan/pulsewave-social-app'
   },
   {
     id: 'velocity-storefront',
@@ -109,7 +109,7 @@ export const PROJECTS: Project[] = [
     ],
     metrics: '98/100 Google Lighthouse performance score with seamless mobile checkout',
     liveUrl: '#demo-velocity',
-    githubUrl: 'https://github.com/jimmynathan/velocity-ecommerce-store'
+    githubUrl: 'https://github.com/iamjimmynathan/velocity-ecommerce-store'
   },
   {
     id: 'sync-agile-flow',
@@ -131,7 +131,7 @@ export const PROJECTS: Project[] = [
     ],
     metrics: '40% faster task creation flow compared to legacy project trackers',
     liveUrl: '#demo-sync',
-    githubUrl: 'https://github.com/jimmynathan/sync-agile-flow'
+    githubUrl: 'https://github.com/iamjimmynathan/sync-agile-flow'
   },
   {
     id: 'inspirix-quote-studio',
@@ -153,7 +153,7 @@ export const PROJECTS: Project[] = [
     ],
     metrics: 'Instant client-side rendering with zero server latency',
     liveUrl: '#demo-inspirix',
-    githubUrl: 'https://github.com/jimmynathan/inspirix-quote-generator'
+    githubUrl: 'https://github.com/iamjimmynathan/inspirix-quote-generator'
   },
   {
     id: 'jimmy-portfolio',
@@ -162,7 +162,7 @@ export const PROJECTS: Project[] = [
     category: 'frontend',
     categoryLabel: 'Frontend & Architecture',
     featured: false,
-    image: '/src/assets/images/jimmy_nathan_portrait_1794213645145.jpg',
+    image: '/assets/aistudio/JPEG_20261001_083412_7493535283134284243_82993767.jpg',
     problem: 'Generic portfolio templates fail to convey full-stack capability, deep mobile knowledge, and engineering rigor to international hiring managers and clients.',
     solution: 'Crafted a bespoke, dark-themed responsive single-page web app with interactive project inspection modals, real-time CV viewer, and seamless direct contact channels.',
     description: 'The personal developer portfolio you are viewing right now, engineered with precision typography, responsive fluid layouts, micro-animations, and zero visual clutter.',
@@ -175,7 +175,7 @@ export const PROJECTS: Project[] = [
     ],
     metrics: '100% Performance & Accessibility audit scores',
     liveUrl: '#',
-    githubUrl: 'https://github.com/jimmynathan/jimmy-nathan-portfolio'
+    githubUrl: 'https://github.com/iamjimmynathan/jimmy-nathan-portfolio'
   }
 ];
 

@@ -1,6 +1,7 @@
-import React from 'react';
-import { X, Printer, Download, Mail, Phone, MapPin, Globe, CheckCircle2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, Printer, Download, Mail, Phone, MapPin, Globe, Linkedin, CheckCircle2, Loader2 } from 'lucide-react';
 import { PERSONAL_INFO, EXPERIENCE_TIMELINE } from '../data/portfolioData';
+import { downloadResumePdf } from '../utils/generatePdf';
 
 interface CVModalProps {
   isOpen: boolean;
@@ -8,10 +9,23 @@ interface CVModalProps {
 }
 
 export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
+  const [isDownloading, setIsDownloading] = useState(false);
+
   if (!isOpen) return null;
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const handleDownloadPdf = async () => {
+    setIsDownloading(true);
+    try {
+      await downloadResumePdf();
+    } catch (err) {
+      console.error('Failed to generate PDF', err);
+    } finally {
+      setIsDownloading(false);
+    }
   };
 
   return (
@@ -26,18 +40,38 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
             <span className="text-xs font-mono font-medium text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
               Curriculum Vitae
             </span>
-            <span className="text-xs text-slate-400 font-mono">Jimmy_Nathan_CV.pdf</span>
+            <span className="text-xs text-slate-400 font-mono hidden sm:inline">Jimmy_Nathan_CV.pdf</span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <button
+              onClick={handleDownloadPdf}
+              disabled={isDownloading}
+              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 rounded-lg hover:brightness-105 active:scale-[0.98] transition-all shadow-md shadow-cyan-500/15 disabled:opacity-60"
+              title="Download PDF directly to your device"
+            >
+              {isDownloading ? (
+                <>
+                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                  <span>Generating...</span>
+                </>
+              ) : (
+                <>
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Download .PDF</span>
+                </>
+              )}
+            </button>
+
             <button
               onClick={handlePrint}
-              className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 rounded-lg hover:brightness-105 transition-all shadow-sm"
-              title="Print or save as PDF"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700 transition-colors"
+              title="Print resume"
             >
               <Printer className="w-3.5 h-3.5" />
-              <span>Print / Save as PDF</span>
+              <span>Print</span>
             </button>
+
             <button
               onClick={onClose}
               className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
@@ -51,32 +85,45 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
         {/* Printable Resume Document */}
         <div className="p-6 sm:p-12 space-y-8 bg-slate-900 print:bg-white print:text-black print:p-6">
           {/* Header Lockup */}
-          <div className="border-b border-slate-800 print:border-slate-300 pb-6">
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-white print:text-black tracking-tight">
-              Jimmy Nathan
-            </h1>
-            <p className="text-lg font-semibold text-cyan-400 print:text-cyan-700 mt-1">
-              Full-Stack Developer & Mobile App Developer
-            </p>
+          <div className="border-b border-slate-800 print:border-slate-300 pb-6 flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-6">
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-extrabold text-white print:text-black tracking-tight">
+                Jimmy Nathan
+              </h1>
+              <p className="text-lg font-semibold text-cyan-400 print:text-cyan-700 mt-1">
+                Full-Stack Developer & Mobile App Developer
+              </p>
 
-            <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-400 print:text-slate-700 font-mono">
-              <span className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-cyan-400" />
-                Nigeria (West Africa Standard Time · UTC+1)
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-cyan-400" />
-                jimmynathan11@gmail.com
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-emerald-400" />
-                +234 90 699 52829
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Globe className="w-3.5 h-3.5 text-teal-400" />
-                github.com/jimmynathan
-              </span>
+              <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-400 print:text-slate-700 font-mono">
+                <span className="flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-cyan-400" />
+                  Nigeria (West Africa Standard Time · UTC+1)
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Mail className="w-3.5 h-3.5 text-cyan-400" />
+                  jimmynathan11@gmail.com
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                  +234 90 699 52829
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Globe className="w-3.5 h-3.5 text-teal-400" />
+                  github.com/iamjimmynathan
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Linkedin className="w-3.5 h-3.5 text-cyan-400" />
+                  linkedin.com/in/hejimmynathan
+                </span>
+              </div>
             </div>
+
+            <img
+              src={PERSONAL_INFO.portraitImage}
+              alt="Jimmy Nathan"
+              referrerPolicy="no-referrer"
+              className="w-24 h-24 rounded-2xl object-cover object-[center_12%] border-2 border-cyan-400/40 shadow-lg shadow-cyan-500/10 shrink-0 print:w-20 print:h-20 print:border-slate-300"
+            />
           </div>
 
           {/* Executive Summary */}

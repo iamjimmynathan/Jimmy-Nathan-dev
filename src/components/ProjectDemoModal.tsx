@@ -143,7 +143,7 @@ const PulseWaveDemo: React.FC = () => {
         </div>
         <div>
           <p className="text-xs font-bold text-white">Jimmy Nathan</p>
-          <p className="text-[10px] text-slate-400">@jimmynathan_dev · Just now</p>
+          <p className="text-[10px] text-slate-400">@iamjimmynathan · Just now</p>
         </div>
       </div>
 

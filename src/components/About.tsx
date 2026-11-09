@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   FileText,
+  Download,
+  Loader2,
   MapPin,
   CheckCircle2,
   Code2,
@@ -11,12 +13,25 @@ import {
   Award
 } from 'lucide-react';
 import { PERSONAL_INFO, STATS, EXPERIENCE_TIMELINE } from '../data/portfolioData';
+import { downloadResumePdf } from '../utils/generatePdf';
 
 interface AboutProps {
   onOpenCV: () => void;
 }
 
 export const About: React.FC<AboutProps> = ({ onOpenCV }) => {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownloadPdf = async () => {
+    setIsDownloading(true);
+    try {
+      await downloadResumePdf();
+    } catch (e) {
+      console.error('Failed to download resume PDF', e);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
   const coreStrengths = [
     {
       title: 'Full-Stack Fluidity',
@@ -61,9 +76,22 @@ export const About: React.FC<AboutProps> = ({ onOpenCV }) => {
           {/* Main Story & Highlights */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800/90 leading-relaxed text-slate-300">
-              <h3 className="text-xl font-bold text-white mb-4">
+              <div className="flex items-center gap-4 mb-6 pb-6 border-b border-slate-800/80">
+                <img
+                  src={PERSONAL_INFO.portraitImage}
+                  alt="Jimmy Nathan"
+                  referrerPolicy="no-referrer"
+                  className="w-16 h-16 rounded-2xl object-cover object-[center_12%] border-2 border-cyan-400/40 shadow-lg shadow-cyan-500/10 shrink-0"
+                />
+                <div>
+                  <h3 className="text-xl font-bold text-white">Jimmy Nathan</h3>
+                  <p className="text-xs text-cyan-300 font-mono">Full-Stack & Mobile Developer · Lagos, Nigeria</p>
+                </div>
+              </div>
+
+              <h4 className="text-lg font-bold text-white mb-3">
                 From Self-Taught Curiosity to High-Impact Production Code
-              </h3>
+              </h4>
               <p className="mb-4 text-base text-slate-300">
                 I am a self-taught software engineer living in <span className="text-cyan-300 font-medium">Nigeria</span>. Early on, I realized that true engineering mastery comes from understanding how every layer of the system talks to each other — from the database lock to the UI frame rate.
               </p>
@@ -139,13 +167,32 @@ export const About: React.FC<AboutProps> = ({ onOpenCV }) => {
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-800 flex flex-col gap-3">
+              <div className="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={handleDownloadPdf}
+                  disabled={isDownloading}
+                  className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 hover:brightness-105 active:scale-[0.98] transition-all shadow-md shadow-cyan-500/15 disabled:opacity-60"
+                  title="Download PDF directly to your device"
+                >
+                  {isDownloading ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Generating PDF...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Download className="w-4 h-4" />
+                      <span>Download CV (.PDF)</span>
+                    </>
+                  )}
+                </button>
+
                 <button
                   onClick={onOpenCV}
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 hover:brightness-105 transition-all shadow-md shadow-cyan-500/10"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 hover:text-white border border-slate-700/80 transition-all shadow-sm"
                 >
-                  <FileText className="w-4 h-4" />
-                  <span>Inspect Full Resume / CV</span>
+                  <FileText className="w-4 h-4 text-cyan-400" />
+                  <span>Inspect Resume</span>
                 </button>
               </div>
             </div>
