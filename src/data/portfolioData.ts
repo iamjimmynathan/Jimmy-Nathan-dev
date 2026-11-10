@@ -168,7 +168,7 @@ export const PROJECTS: Project[] = [
     description: 'The personal developer portfolio you are viewing right now, engineered with precision typography, responsive fluid layouts, micro-animations, and zero visual clutter.',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Motion', 'Vite'],
     architectureHighlights: [
-      'Accessible WCAG-compliant color contrast with electric cyan accents',
+      'Accessible WCAG-compliant color contrast with executive sky blue accents',
       'Zero layout shift and instant component rendering',
       'Interactive modals for project case studies and resume inspection',
       'Direct WhatsApp and email communication hooks'

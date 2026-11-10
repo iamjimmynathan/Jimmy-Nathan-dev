@@ -50,12 +50,12 @@ export async function downloadResumePdf(): Promise<void> {
 
   let y = 18;
 
-  // Header Banner Background (Deep Navy)
-  doc.setFillColor(11, 17, 32); // #0B1120
+  // Header Banner Background (Deep Executive Midnight)
+  doc.setFillColor(7, 11, 20); // #070B14
   doc.rect(0, 0, pageWidth, 42, 'F');
 
-  // Accent Line under header (Vibrant Cyan)
-  doc.setFillColor(6, 182, 212); // #06B6D4
+  // Accent Line under header (Executive Sky Blue)
+  doc.setFillColor(14, 165, 233); // #0EA5E9
   doc.rect(0, 42, pageWidth, 1.5, 'F');
 
   // Attempt to add Jimmy's photo
@@ -65,7 +65,7 @@ export async function downloadResumePdf(): Promise<void> {
       // Add portrait thumbnail in top right
       doc.addImage(photoBase64, 'JPEG', pageWidth - margin - 22, 10, 22, 26);
       // Border around photo
-      doc.setDrawColor(6, 182, 212);
+      doc.setDrawColor(14, 165, 233);
       doc.setLineWidth(0.5);
       doc.rect(pageWidth - margin - 22, 10, 22, 26);
     }
@@ -83,7 +83,7 @@ export async function downloadResumePdf(): Promise<void> {
   // Subtitle / Roles
   doc.setFontSize(10.5);
   doc.setFont('helvetica', 'bold');
-  doc.setTextColor(34, 211, 238); // Cyan
+  doc.setTextColor(56, 189, 248); // Sky 400
   doc.text('FULL-STACK DEVELOPER & MOBILE APP DEVELOPER', margin, y);
 
   y += 6;
@@ -103,11 +103,11 @@ export async function downloadResumePdf(): Promise<void> {
   const addSectionHeader = (title: string) => {
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(10);
-    doc.setTextColor(11, 17, 32); // Deep Navy
+    doc.setTextColor(7, 11, 20); // Deep Midnight
     doc.text(title.toUpperCase(), margin, y);
 
     // Decorative line
-    doc.setDrawColor(6, 182, 212); // Cyan line
+    doc.setDrawColor(14, 165, 233); // Sky Blue line
     doc.setLineWidth(0.6);
     doc.line(margin, y + 1.5, margin + 45, y + 1.5);
 
@@ -169,7 +169,7 @@ export async function downloadResumePdf(): Promise<void> {
     // Period (aligned right)
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(8);
-    doc.setTextColor(8, 145, 178); // Cyan dark
+    doc.setTextColor(2, 132, 199); // Sky dark (#0284C7)
     doc.text(exp.period, pageWidth - margin, y, { align: 'right' });
 
     y += 4;

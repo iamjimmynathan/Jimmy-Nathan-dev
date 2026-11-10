@@ -35,9 +35,9 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Action Bar (hidden during print) */}
-        <div className="sticky top-0 z-10 flex items-center justify-between p-4 sm:px-8 border-b border-slate-800 bg-slate-900/95 backdrop-blur-md print:hidden">
+        <div className="sticky top-0 z-10 flex items-center justify-between p-4 sm:px-8 border-b border-slate-800 bg-[#070B14]/95 backdrop-blur-md print:hidden">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-mono font-medium text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
+            <span className="text-xs font-mono font-medium text-sky-400 bg-sky-950/60 border border-sky-500/30 px-2.5 py-0.5 rounded">
               Curriculum Vitae
             </span>
             <span className="text-xs text-slate-400 font-mono hidden sm:inline">Jimmy_Nathan_CV.pdf</span>
@@ -47,7 +47,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
             <button
               onClick={handleDownloadPdf}
               disabled={isDownloading}
-              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 rounded-lg hover:brightness-105 active:scale-[0.98] transition-all shadow-md shadow-cyan-500/15 disabled:opacity-60"
+              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 rounded-lg hover:brightness-105 active:scale-[0.98] transition-all shadow-md shadow-sky-500/20 disabled:opacity-60"
               title="Download PDF directly to your device"
             >
               {isDownloading ? (
@@ -83,24 +83,24 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Printable Resume Document */}
-        <div className="p-6 sm:p-12 space-y-8 bg-slate-900 print:bg-white print:text-black print:p-6">
+        <div className="p-6 sm:p-12 space-y-8 bg-[#070B14] print:bg-white print:text-black print:p-6">
           {/* Header Lockup */}
           <div className="border-b border-slate-800 print:border-slate-300 pb-6 flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-6">
             <div>
               <h1 className="text-3xl sm:text-4xl font-extrabold text-white print:text-black tracking-tight">
                 Jimmy Nathan
               </h1>
-              <p className="text-lg font-semibold text-cyan-400 print:text-cyan-700 mt-1">
+              <p className="text-lg font-semibold text-sky-400 print:text-sky-700 mt-1">
                 Full-Stack Developer & Mobile App Developer
               </p>
 
               <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-400 print:text-slate-700 font-mono">
                 <span className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-cyan-400" />
+                  <MapPin className="w-3.5 h-3.5 text-sky-400" />
                   Nigeria (West Africa Standard Time · UTC+1)
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Mail className="w-3.5 h-3.5 text-cyan-400" />
+                  <Mail className="w-3.5 h-3.5 text-sky-400" />
                   jimmynathan11@gmail.com
                 </span>
                 <span className="flex items-center gap-1.5">
@@ -108,11 +108,11 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
                   +234 90 699 52829
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Globe className="w-3.5 h-3.5 text-teal-400" />
+                  <Globe className="w-3.5 h-3.5 text-sky-300" />
                   github.com/iamjimmynathan
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Linkedin className="w-3.5 h-3.5 text-cyan-400" />
+                  <Linkedin className="w-3.5 h-3.5 text-sky-400" />
                   linkedin.com/in/hejimmynathan
                 </span>
               </div>
@@ -122,13 +122,13 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
               src={PERSONAL_INFO.portraitImage}
               alt="Jimmy Nathan"
               referrerPolicy="no-referrer"
-              className="w-24 h-24 rounded-2xl object-cover object-[center_12%] border-2 border-cyan-400/40 shadow-lg shadow-cyan-500/10 shrink-0 print:w-20 print:h-20 print:border-slate-300"
+              className="w-24 h-24 rounded-2xl object-cover object-[center_12%] border-2 border-sky-400/40 shadow-lg shadow-sky-500/10 shrink-0 print:w-20 print:h-20 print:border-slate-300"
             />
           </div>
 
           {/* Executive Summary */}
           <div>
-            <h2 className="text-xs font-mono uppercase tracking-widest text-cyan-400 print:text-cyan-800 font-bold mb-2">
+            <h2 className="text-xs font-mono uppercase tracking-widest text-sky-400 print:text-sky-800 font-bold mb-2">
               Professional Summary
             </h2>
             <p className="text-sm leading-relaxed text-slate-300 print:text-slate-800">
@@ -138,7 +138,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
 
           {/* Core Technical Capabilities */}
           <div>
-            <h2 className="text-xs font-mono uppercase tracking-widest text-cyan-400 print:text-cyan-800 font-bold mb-3">
+            <h2 className="text-xs font-mono uppercase tracking-widest text-sky-400 print:text-sky-800 font-bold mb-3">
               Technical Proficiencies
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
@@ -171,7 +171,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
 
           {/* Work Experience */}
           <div>
-            <h2 className="text-xs font-mono uppercase tracking-widest text-cyan-400 print:text-cyan-800 font-bold mb-4">
+            <h2 className="text-xs font-mono uppercase tracking-widest text-sky-400 print:text-sky-800 font-bold mb-4">
               Work Experience & Major Projects
             </h2>
             <div className="space-y-6">
@@ -181,7 +181,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
                     <h3 className="text-base font-bold text-white print:text-black">
                       {item.role}
                     </h3>
-                    <span className="text-xs font-mono text-cyan-400 print:text-slate-600">
+                    <span className="text-xs font-mono text-sky-400 print:text-slate-600">
                       {item.period}
                     </span>
                   </div>
@@ -202,7 +202,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
 
           {/* Key Featured Accomplishments */}
           <div>
-            <h2 className="text-xs font-mono uppercase tracking-widest text-cyan-400 print:text-cyan-800 font-bold mb-3">
+            <h2 className="text-xs font-mono uppercase tracking-widest text-sky-400 print:text-sky-800 font-bold mb-3">
               Selected Production Implementations
             </h2>
             <div className="space-y-3 text-xs">

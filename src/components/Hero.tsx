@@ -52,11 +52,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
       {/* Background Ambient Glows */}
       <div
         aria-hidden="true"
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[130px] pointer-events-none -z-10"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/10 rounded-full blur-[140px] pointer-events-none -z-10"
       />
       <div
         aria-hidden="true"
-        className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-teal-500/10 rounded-full blur-[120px] pointer-events-none -z-10"
+        className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[130px] pointer-events-none -z-10"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,15 +65,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
           {/* Left Column: Typographic Hierarchy */}
           <div className="lg:col-span-7 flex flex-col items-start">
             {/* Location / Status lead */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300 mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-cyan-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-sky-500/30 text-xs font-mono text-sky-300 mb-6 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-sky-400" />
               <span>Based in Nigeria · Available for Worldwide Contracts</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white text-balance leading-[1.12]">
               Hi, I’m{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-sky-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-sky-200 to-blue-400">
                 Jimmy Nathan
               </span>
             </h1>
@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
             <div className="h-10 mt-3 flex items-center">
               <span className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-300">
                 <span
-                  className={`inline-block transition-all duration-300 text-cyan-300 ${
+                  className={`inline-block transition-all duration-300 text-sky-300 ${
                     fadeState === 'in' ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
                   }`}
                 >
@@ -92,16 +92,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
             </div>
 
             {/* Short Powerful Description */}
-            <p className="mt-5 text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed">
+            <p className="mt-5 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
               I build complete digital solutions — from responsive client interfaces and robust backend APIs
-              to fluid cross-platform mobile apps for iOS and Android. Passionate about clean architecture, high throughput, and delightful user experiences.
+              to fluid cross-platform mobile apps for iOS and Android. Engineered with precision, clean architecture, and bank-grade reliability.
             </p>
 
             {/* Primary & Secondary Action CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 rounded-xl shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/35 hover:brightness-105 active:scale-[0.98] transition-all whitespace-nowrap"
+                className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-bold text-slate-950 bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 rounded-xl shadow-lg shadow-sky-500/20 hover:shadow-sky-500/35 hover:brightness-105 active:scale-[0.98] transition-all whitespace-nowrap"
               >
                 <span>View My Work</span>
                 <ArrowDown className="w-4 h-4" />
@@ -119,17 +119,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
                   }
                 }}
                 disabled={isDownloading}
-                className="inline-flex items-center gap-2 px-5 py-3.5 text-sm font-semibold text-slate-200 bg-slate-900/80 border border-slate-700/80 hover:border-cyan-400/50 hover:text-white rounded-xl shadow-sm hover:bg-slate-800/80 active:scale-[0.98] transition-all whitespace-nowrap disabled:opacity-60"
+                className="inline-flex items-center gap-2 px-5 py-3.5 text-sm font-semibold text-slate-200 bg-slate-900/80 border border-slate-700/80 hover:border-sky-400/50 hover:text-white rounded-xl shadow-sm hover:bg-slate-800/80 active:scale-[0.98] transition-all whitespace-nowrap disabled:opacity-60"
                 title="Download Jimmy Nathan's Resume as PDF"
               >
                 {isDownloading ? (
                   <>
-                    <Loader2 className="w-4 h-4 text-cyan-400 animate-spin" />
+                    <Loader2 className="w-4 h-4 text-sky-400 animate-spin" />
                     <span>Generating PDF...</span>
                   </>
                 ) : (
                   <>
-                    <Download className="w-4 h-4 text-cyan-400" />
+                    <Download className="w-4 h-4 text-sky-400" />
                     <span>Download CV (.PDF)</span>
                   </>
                 )}
@@ -137,7 +137,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-3.5 text-sm font-semibold text-cyan-400 hover:text-cyan-300 rounded-xl hover:bg-cyan-950/30 transition-colors whitespace-nowrap"
+                className="inline-flex items-center gap-2 px-5 py-3.5 text-sm font-semibold text-sky-400 hover:text-sky-300 rounded-xl hover:bg-sky-950/30 transition-colors whitespace-nowrap"
               >
                 <Mail className="w-4 h-4" />
                 <span>Let's Talk</span>
@@ -146,7 +146,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
 
             {/* Social Proof Icons */}
             <div className="mt-10 pt-6 border-t border-slate-800/80 flex items-center gap-6">
-              <span className="text-xs font-mono text-slate-300 tracking-wider">
+              <span className="text-xs font-mono text-slate-400 tracking-wider">
                 CONNECT
               </span>
               <div className="flex items-center gap-3">
@@ -155,7 +155,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GitHub Profile"
-                  className="p-2 text-slate-400 hover:text-cyan-400 hover:bg-slate-800/60 rounded-lg transition-colors"
+                  className="p-2 text-slate-400 hover:text-sky-400 hover:bg-slate-800/60 rounded-lg transition-colors"
                 >
                   <Github className="w-5 h-5" />
                 </a>
@@ -164,7 +164,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn Profile"
-                  className="p-2 text-slate-400 hover:text-cyan-400 hover:bg-slate-800/60 rounded-lg transition-colors"
+                  className="p-2 text-slate-400 hover:text-sky-400 hover:bg-slate-800/60 rounded-lg transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
@@ -173,7 +173,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Twitter/X Profile"
-                  className="p-2 text-slate-400 hover:text-cyan-400 hover:bg-slate-800/60 rounded-lg transition-colors"
+                  className="p-2 text-slate-400 hover:text-sky-400 hover:bg-slate-800/60 rounded-lg transition-colors"
                 >
                   <Twitter className="w-5 h-5" />
                 </a>
@@ -182,7 +182,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram Profile"
-                  className="p-2 text-slate-400 hover:text-cyan-400 hover:bg-slate-800/60 rounded-lg transition-colors"
+                  className="p-2 text-slate-400 hover:text-sky-400 hover:bg-slate-800/60 rounded-lg transition-colors"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
@@ -207,15 +207,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
               {/* Outer decorative glowing geometric backdrop */}
               <div
                 aria-hidden="true"
-                className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-cyan-500/20 via-teal-500/10 to-transparent blur-xl"
+                className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-sky-500/20 via-blue-600/10 to-transparent blur-xl"
               />
               <div
                 aria-hidden="true"
-                className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-cyan-500/30 via-slate-800 to-teal-400/20 opacity-70"
+                className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-sky-500/30 via-slate-800 to-blue-500/20 opacity-70"
               />
 
               {/* Main Image Container */}
-              <div className="relative w-full h-full rounded-2xl overflow-hidden bg-slate-900 border border-cyan-500/30 shadow-2xl">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden bg-slate-900 border border-sky-500/30 shadow-2xl">
                 <img
                   src={PERSONAL_INFO.portraitImage}
                   alt="Jimmy Nathan — Full-Stack & Mobile App Developer"
@@ -223,12 +223,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
                   className="w-full h-full object-cover object-[center_12%] hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 {/* Subtle gradient scrim at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-transparent opacity-60 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070B14] via-transparent to-transparent opacity-60 pointer-events-none" />
 
                 {/* In-Frame Accent Badge */}
-                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/60 flex items-center justify-between">
+                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-slate-900/95 backdrop-blur-md border border-slate-700/60 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                    <div className="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400">
                       <Sparkles className="w-4 h-4" />
                     </div>
                     <div>
@@ -236,19 +236,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
                       <p className="text-[11px] text-slate-400">Full-Stack & Mobile</p>
                     </div>
                   </div>
-                  <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
+                  <span className="text-[11px] font-mono text-sky-300 bg-sky-950/60 border border-sky-500/30 px-2 py-0.5 rounded">
                     Lagos, NG
                   </span>
                 </div>
               </div>
 
               {/* Floating Orbiting Tech Badges */}
-              <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-xl bg-slate-900/95 border border-cyan-500/40 text-xs font-medium text-cyan-300 shadow-xl flex items-center gap-1.5 animate-bounce [animation-duration:4s]">
-                <Smartphone className="w-3.5 h-3.5 text-cyan-400" />
+              <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-xl bg-slate-900/95 border border-sky-500/40 text-xs font-medium text-sky-300 shadow-xl flex items-center gap-1.5 animate-bounce [animation-duration:4s]">
+                <Smartphone className="w-3.5 h-3.5 text-sky-400" />
                 <span>React Native</span>
               </div>
-              <div className="absolute -bottom-3 -left-3 px-3 py-1.5 rounded-xl bg-slate-900/95 border border-teal-500/40 text-xs font-medium text-teal-300 shadow-xl flex items-center gap-1.5">
-                <Server className="w-3.5 h-3.5 text-teal-400" />
+              <div className="absolute -bottom-3 -left-3 px-3 py-1.5 rounded-xl bg-slate-900/95 border border-blue-500/40 text-xs font-medium text-blue-300 shadow-xl flex items-center gap-1.5">
+                <Server className="w-3.5 h-3.5 text-blue-400" />
                 <span>Node.js · Postgres</span>
               </div>
             </div>
@@ -258,12 +258,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
         {/* Full-Width Key Metrics Strip (Placed below the hero split per guidelines) */}
         <div className="mt-16 sm:mt-20 pt-10 border-t border-slate-800/80">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            {STATS.map((stat, idx) => (
+            {STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="p-5 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-cyan-500/30 transition-all group"
+                className="p-5 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-sky-500/30 transition-all group"
               >
-                <div className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300 font-mono tabular-nums">
+                <div className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-300 font-mono tabular-nums">
                   {stat.value}
                 </div>
                 <div className="mt-1 text-sm font-semibold text-slate-200">

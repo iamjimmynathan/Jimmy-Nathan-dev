@@ -30,7 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0B1120]/85 backdrop-blur-md border-b border-slate-800/80 py-3 shadow-lg shadow-black/20'
+          ? 'bg-[#070B14]/85 backdrop-blur-md border-b border-slate-800/80 py-3 shadow-lg shadow-black/30'
           : 'bg-transparent py-5'
       }`}
     >
@@ -41,10 +41,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             href="#hero"
             className="group flex items-center gap-2 text-xl font-bold tracking-tight text-white whitespace-nowrap shrink-0 transition-opacity hover:opacity-90"
           >
-            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300">
+            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400">
               Jimmy Nathan
             </span>
-            <span className="text-xs text-cyan-400/80 font-mono font-medium px-1.5 py-0.5 rounded border border-cyan-500/20 bg-cyan-950/30">
+            <span className="text-xs text-sky-400/90 font-mono font-medium px-1.5 py-0.5 rounded border border-sky-500/25 bg-sky-950/40">
               dev
             </span>
           </a>
@@ -59,13 +59,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                   href={link.href}
                   className={`relative py-1 transition-colors whitespace-nowrap shrink-0 ${
                     isActive
-                      ? 'text-cyan-400 font-semibold'
+                      ? 'text-sky-400 font-semibold'
                       : 'text-slate-300 hover:text-white'
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full" />
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-sky-400 to-blue-500 rounded-full" />
                   )}
                 </a>
               );
@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           <div className="hidden md:flex items-center gap-3 shrink-0">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-300 rounded-lg shadow-md shadow-cyan-500/15 hover:shadow-cyan-500/30 hover:brightness-105 active:scale-[0.98] transition-all whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-950 bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 rounded-lg shadow-md shadow-sky-500/15 hover:shadow-sky-500/30 hover:brightness-105 active:scale-[0.98] transition-all whitespace-nowrap shrink-0"
             >
               <span>Let's Talk</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -87,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           <div className="flex md:hidden items-center gap-2">
             <a
               href="#contact"
-              className="px-3 py-1.5 text-xs font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-300 rounded-md"
+              className="px-3 py-1.5 text-xs font-semibold text-slate-950 bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 rounded-md"
             >
               Hire Me
             </a>
@@ -96,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               className="p-2 text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/60 transition-colors focus:outline-none"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6 text-cyan-400" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6 text-sky-400" />}
             </button>
           </div>
         </div>
@@ -104,7 +104,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0B1120]/95 backdrop-blur-xl border-b border-slate-800 px-6 py-6 transition-all animate-in fade-in slide-in-from-top-4">
+        <div className="md:hidden bg-[#070B14]/95 backdrop-blur-xl border-b border-slate-800 px-6 py-6 transition-all animate-in fade-in slide-in-from-top-4">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
@@ -112,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`py-2 text-base font-medium transition-colors ${
-                  activeSection === link.id ? 'text-cyan-400 font-semibold' : 'text-slate-300 hover:text-white'
+                  activeSection === link.id ? 'text-sky-400 font-semibold' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 {link.name}
@@ -131,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 py-2.5 px-4 text-sm font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-300 rounded-lg shadow-md hover:brightness-105"
+                className="flex items-center justify-center gap-2 py-2.5 px-4 text-sm font-semibold text-slate-950 bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 rounded-lg shadow-md hover:brightness-105"
               >
                 <span>Send Message / Let's Talk</span>
                 <ArrowUpRight className="w-4 h-4" />

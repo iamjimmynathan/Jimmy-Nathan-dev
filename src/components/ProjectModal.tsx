@@ -20,7 +20,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
         {/* Header Bar */}
         <div className="sticky top-0 z-10 flex items-center justify-between p-5 sm:px-8 border-b border-slate-800 bg-slate-900/95 backdrop-blur-md">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-mono font-medium text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-2.5 py-1 rounded">
+            <span className="text-xs font-mono font-medium text-sky-400 bg-sky-950/60 border border-sky-500/30 px-2.5 py-1 rounded">
               {project.categoryLabel}
             </span>
             <span className="text-xs text-slate-400 font-mono">Case Study</span>
@@ -50,7 +50,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
                 {project.title}
               </h3>
-              <p className="text-sm text-cyan-300 font-medium mt-1">
+              <p className="text-sm text-sky-300 font-medium mt-1">
                 {project.subtitle}
               </p>
             </div>
@@ -63,7 +63,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
                 onClose();
                 onOpenDemo(project);
               }}
-              className="flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 rounded-xl hover:brightness-105 active:scale-[0.98] transition-all shadow-md shadow-cyan-500/20"
+              className="flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 rounded-xl hover:brightness-105 active:scale-[0.98] transition-all shadow-md shadow-sky-500/20"
             >
               <span>Launch Interactive Preview</span>
               <ExternalLink className="w-4 h-4" />
@@ -92,7 +92,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
             </div>
 
             <div className="p-5 rounded-xl bg-slate-950/60 border border-slate-800/90">
-              <div className="text-xs font-mono uppercase tracking-wider text-teal-400 font-semibold mb-2">
+              <div className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold mb-2">
                 Architectural Solution
               </div>
               <p className="text-sm text-slate-300 leading-relaxed">
@@ -104,7 +104,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
           {/* Architecture Highlights */}
           <div>
             <h4 className="text-base font-bold text-white mb-4 flex items-center gap-2">
-              <Cpu className="w-4 h-4 text-cyan-400" />
+              <Cpu className="w-4 h-4 text-sky-400" />
               <span>Key Technical Highlights & Implementation</span>
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -113,7 +113,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
                   key={idx}
                   className="p-4 rounded-xl bg-slate-950/40 border border-slate-800 flex items-start gap-3"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
                   <span className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                     {highlight}
                   </span>
@@ -124,10 +124,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
 
           {/* Metrics & Performance Strip */}
           {project.metrics && (
-            <div className="p-5 rounded-xl bg-gradient-to-r from-cyan-950/30 to-slate-900 border border-cyan-500/20 flex items-center gap-3">
-              <BarChart3 className="w-5 h-5 text-cyan-400 shrink-0" />
+            <div className="p-5 rounded-xl bg-gradient-to-r from-sky-950/30 to-slate-900 border border-sky-500/20 flex items-center gap-3">
+              <BarChart3 className="w-5 h-5 text-sky-400 shrink-0" />
               <div>
-                <div className="text-xs font-mono text-cyan-400 font-medium">Outcome & Performance</div>
+                <div className="text-xs font-mono text-sky-400 font-medium">Outcome & Performance</div>
                 <div className="text-sm font-semibold text-white">{project.metrics}</div>
               </div>
             </div>

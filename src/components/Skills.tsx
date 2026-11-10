@@ -41,13 +41,13 @@ export const Skills: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col items-start mb-12">
-          <div className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2">
+          <div className="text-xs font-mono text-sky-400 uppercase tracking-widest mb-2">
             02. Technical Arsenal
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Comprehensive Skills & Frameworks
           </h2>
-          <p className="mt-3 text-slate-400 max-w-2xl text-base sm:text-lg">
+          <p className="mt-3 text-slate-300 max-w-2xl text-base sm:text-lg">
             A battle-tested technology stack spanning responsive client systems, robust backend logic, and native cross-platform mobile apps.
           </p>
         </div>
@@ -63,11 +63,11 @@ export const Skills: React.FC = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-medium rounded-lg transition-all whitespace-nowrap shrink-0 ${
                   isActive
-                    ? 'bg-gradient-to-r from-cyan-500/20 to-teal-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm'
+                    ? 'bg-gradient-to-r from-sky-500/20 to-blue-500/20 text-sky-300 border border-sky-500/40 shadow-sm'
                     : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
                 }`}
               >
-                <IconComponent className={`w-4 h-4 ${isActive ? 'text-cyan-400' : 'text-slate-400'}`} />
+                <IconComponent className={`w-4 h-4 ${isActive ? 'text-sky-400' : 'text-slate-400'}`} />
                 <span>{tab.label}</span>
               </button>
             );
@@ -86,7 +86,7 @@ export const Skills: React.FC = () => {
                   </h3>
                   <p className="text-xs text-slate-400 mt-0.5">{category.description}</p>
                 </div>
-                <div className="text-xs font-mono text-cyan-400">
+                <div className="text-xs font-mono text-sky-400">
                   {category.skills.length} core competencies
                 </div>
               </div>
@@ -96,27 +96,27 @@ export const Skills: React.FC = () => {
                 {category.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="p-5 rounded-xl bg-slate-900/50 border border-slate-800/90 hover:border-cyan-500/30 hover:bg-slate-900/80 transition-all group"
+                    className="p-5 rounded-xl bg-slate-900/50 border border-slate-800/90 hover:border-sky-500/30 hover:bg-slate-900/80 transition-all group"
                   >
                     {/* Header: Skill Name & Percentage */}
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                        <span className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">
+                        <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                        <span className="text-sm font-bold text-white group-hover:text-sky-300 transition-colors">
                           {skill.name}
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
                         <span>{skill.years}</span>
                         <span aria-hidden="true">·</span>
-                        <span className="text-cyan-300 font-bold tabular-nums">{skill.level}%</span>
+                        <span className="text-sky-300 font-bold tabular-nums">{skill.level}%</span>
                       </div>
                     </div>
 
-                    {/* Progress Bar with Cyan/Teal Gradient */}
+                    {/* Progress Bar with Sky/Blue Gradient */}
                     <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden my-3">
                       <div
-                        className="h-full bg-gradient-to-r from-cyan-500 to-teal-400 rounded-full transition-all duration-700 ease-out"
+                        className="h-full bg-gradient-to-r from-sky-400 to-blue-500 rounded-full transition-all duration-700 ease-out"
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
@@ -133,7 +133,7 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Technical Focus Summary Callout */}
-        <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-cyan-950/20 via-slate-900/80 to-teal-950/20 border border-cyan-500/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-sky-950/30 via-slate-900/90 to-blue-950/30 border border-sky-500/25 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl">
           <div className="max-w-3xl">
             <h4 className="text-base sm:text-lg font-bold text-white">
               End-to-End Architectural Capability
@@ -144,7 +144,7 @@ export const Skills: React.FC = () => {
           </div>
           <a
             href="#projects"
-            className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-slate-900 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-colors whitespace-nowrap shrink-0 shadow-md"
+            className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-slate-950 bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 hover:brightness-105 rounded-lg transition-all whitespace-nowrap shrink-0 shadow-md shadow-sky-500/15"
           >
             Explore Projects
           </a>

@@ -25,17 +25,17 @@ export const ProjectDemoModal: React.FC<ProjectDemoModalProps> = ({ project, onC
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-200">
       <div
-        className="relative w-full max-w-3xl max-h-[92vh] overflow-hidden bg-slate-900 border border-cyan-500/30 rounded-2xl shadow-2xl flex flex-col"
+        className="relative w-full max-w-3xl max-h-[92vh] overflow-hidden bg-[#070B14] border border-sky-500/30 rounded-2xl shadow-2xl flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-900/90">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-[#070B14]/90">
           <div className="flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
             <div>
               <h3 className="text-sm font-bold text-white flex items-center gap-2">
                 <span>{project.title}</span>
-                <span className="text-[10px] font-mono text-cyan-400 border border-cyan-500/30 px-1.5 py-0.5 rounded">
+                <span className="text-[10px] font-mono text-sky-400 border border-sky-500/30 px-1.5 py-0.5 rounded">
                   Interactive Sandbox
                 </span>
               </h3>
@@ -80,16 +80,16 @@ const ApexPayDemo: React.FC = () => {
   return (
     <div className="max-w-md mx-auto p-6 rounded-2xl bg-slate-950 border border-slate-800 text-slate-100">
       <div className="flex items-center justify-between mb-4">
-        <span className="text-xs font-mono text-cyan-400">APEXPAY MOBILE APP</span>
+        <span className="text-xs font-mono text-sky-400">APEXPAY MOBILE APP</span>
         <span className="text-xs text-emerald-400 font-mono">Live Ledger: Online</span>
       </div>
 
-      <div className="p-6 rounded-xl bg-gradient-to-br from-cyan-900/40 via-slate-900 to-teal-900/30 border border-cyan-500/30 mb-6">
+      <div className="p-6 rounded-xl bg-gradient-to-br from-sky-950/60 via-slate-900 to-blue-950/40 border border-sky-500/30 mb-6">
         <p className="text-xs text-slate-400 font-mono">PRIMARY WALLET</p>
         <p className="text-3xl font-extrabold text-white font-mono mt-1">
           ${balance.toLocaleString('en-US', { minimumFractionDigits: 2 })}
         </p>
-        <p className="text-[11px] text-cyan-300 mt-2 font-mono">•••• 4567 (Virtual Mastercard Active)</p>
+        <p className="text-[11px] text-sky-300 mt-2 font-mono">•••• 4567 (Virtual Mastercard Active)</p>
       </div>
 
       {transferStatus && (
@@ -101,7 +101,7 @@ const ApexPayDemo: React.FC = () => {
       <div className="space-y-3">
         <button
           onClick={handleSendMoney}
-          className="w-full py-3 px-4 rounded-xl font-bold text-xs text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 hover:brightness-105 transition-all flex items-center justify-center gap-2"
+          className="w-full py-3 px-4 rounded-xl font-bold text-xs text-slate-950 bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 hover:brightness-105 transition-all flex items-center justify-center gap-2 shadow-md shadow-sky-500/15"
         >
           <CreditCard className="w-4 h-4" />
           <span>Simulate Quick Transfer ($150.00)</span>
@@ -138,7 +138,7 @@ const PulseWaveDemo: React.FC = () => {
   return (
     <div className="max-w-md mx-auto p-5 rounded-2xl bg-slate-950 border border-slate-800 text-slate-100">
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-9 h-9 rounded-full bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center font-bold text-xs text-cyan-300">
+        <div className="w-9 h-9 rounded-full bg-sky-500/20 border border-sky-400/40 flex items-center justify-center font-bold text-xs text-sky-300">
           JN
         </div>
         <div>
@@ -174,11 +174,11 @@ const PulseWaveDemo: React.FC = () => {
           value={commentText}
           onChange={(e) => setCommentText(e.target.value)}
           placeholder="Leave a comment..."
-          className="flex-1 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+          className="flex-1 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-400"
         />
         <button
           type="submit"
-          className="px-3 py-1.5 rounded-lg bg-cyan-400 text-slate-950 text-xs font-bold hover:bg-cyan-300"
+          className="px-3 py-1.5 rounded-lg bg-sky-400 text-slate-950 text-xs font-bold hover:bg-sky-300"
         >
           Post
         </button>
@@ -206,9 +206,9 @@ const VelocityDemo: React.FC = () => {
         <span className="text-xs font-bold text-white font-mono">VELOCITY STOREFRONT</span>
         <button
           onClick={() => setShowCheckout(!showCheckout)}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-cyan-300 hover:border-cyan-500/40"
+          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-sky-300 hover:border-sky-500/40"
         >
-          <ShoppingCart className="w-3.5 h-3.5 text-cyan-400" />
+          <ShoppingCart className="w-3.5 h-3.5 text-sky-400" />
           <span>Cart ({cartCount})</span>
         </button>
       </div>
@@ -216,20 +216,20 @@ const VelocityDemo: React.FC = () => {
       <div className="grid grid-cols-2 gap-3 mb-4">
         <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
           <p className="text-xs font-bold text-white">Nile Runner Pro</p>
-          <p className="text-xs font-mono text-cyan-400 my-1">$120.00</p>
+          <p className="text-xs font-mono text-sky-400 my-1">$120.00</p>
           <button
             onClick={() => setCartCount(cartCount + 1)}
-            className="w-full py-1 px-2 rounded bg-cyan-400/20 text-cyan-300 hover:bg-cyan-400 hover:text-slate-950 text-[11px] font-bold transition-all"
+            className="w-full py-1 px-2 rounded bg-sky-400/20 text-sky-300 hover:bg-sky-400 hover:text-slate-950 text-[11px] font-bold transition-all"
           >
             Add to Cart
           </button>
         </div>
         <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
           <p className="text-xs font-bold text-white">Aero Studio Pods</p>
-          <p className="text-xs font-mono text-cyan-400 my-1">$75.00</p>
+          <p className="text-xs font-mono text-sky-400 my-1">$75.00</p>
           <button
             onClick={() => setCartCount(cartCount + 1)}
-            className="w-full py-1 px-2 rounded bg-cyan-400/20 text-cyan-300 hover:bg-cyan-400 hover:text-slate-950 text-[11px] font-bold transition-all"
+            className="w-full py-1 px-2 rounded bg-sky-400/20 text-sky-300 hover:bg-sky-400 hover:text-slate-950 text-[11px] font-bold transition-all"
           >
             Add to Cart
           </button>
@@ -237,7 +237,7 @@ const VelocityDemo: React.FC = () => {
       </div>
 
       {showCheckout && (
-        <div className="p-4 rounded-xl bg-cyan-950/40 border border-cyan-500/40 text-xs space-y-2 animate-in fade-in">
+        <div className="p-4 rounded-xl bg-sky-950/40 border border-sky-500/40 text-xs space-y-2 animate-in fade-in">
           <p className="font-bold text-white">Paystack Gateway Reconciliation</p>
           <p className="text-slate-300">Total items: {cartCount} | Order Total: ${cartCount * 75}.00</p>
           <button
@@ -274,7 +274,7 @@ const SyncAgileDemo: React.FC = () => {
 
   return (
     <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-slate-100">
-      <div className="text-xs font-mono text-cyan-400 mb-3">SPRINT 24 KANBAN BOARD</div>
+      <div className="text-xs font-mono text-sky-400 mb-3">SPRINT 24 KANBAN BOARD</div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         {['backlog', 'progress', 'done'].map((column) => (
           <div key={column} className="p-3 rounded-xl bg-slate-900 border border-slate-800">
@@ -288,10 +288,10 @@ const SyncAgileDemo: React.FC = () => {
                   <div
                     key={t.id}
                     onClick={() => moveTask(t.id)}
-                    className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 hover:border-cyan-400 cursor-pointer text-xs transition-colors"
+                    className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 hover:border-sky-400 cursor-pointer text-xs transition-colors"
                   >
                     <p className="font-medium text-white">{t.title}</p>
-                    <span className="text-[10px] text-cyan-400 mt-1 block">Click to advance column</span>
+                    <span className="text-[10px] text-sky-400 mt-1 block">Click to advance column</span>
                   </div>
                 ))}
             </div>
@@ -321,26 +321,26 @@ const InspirixDemo: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 rounded-2xl bg-gradient-to-br from-slate-950 to-cyan-950/30 border border-cyan-500/30 text-center">
-      <p className="text-xs font-mono text-cyan-400 mb-4">INSPIRIX AUDIO & POSTER STUDIO</p>
+    <div className="max-w-md mx-auto p-6 rounded-2xl bg-gradient-to-br from-[#070B14] to-sky-950/30 border border-sky-500/30 text-center">
+      <p className="text-xs font-mono text-sky-400 mb-4">INSPIRIX AUDIO & POSTER STUDIO</p>
       <blockquote className="text-base sm:text-lg font-serif italic text-white mb-3">
         "{quotes[index].text}"
       </blockquote>
-      <p className="text-xs font-mono text-cyan-300 mb-6">— {quotes[index].author}</p>
+      <p className="text-xs font-mono text-sky-300 mb-6">— {quotes[index].author}</p>
 
       <div className="flex items-center justify-center gap-3">
         <button
           onClick={() => setIndex((index + 1) % quotes.length)}
-          className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-colors"
+          className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-slate-950 bg-sky-400 hover:bg-sky-300 rounded-lg transition-colors shadow-sm shadow-sky-500/20"
         >
           <RefreshCw className="w-3.5 h-3.5" />
           <span>Next Quote</span>
         </button>
         <button
           onClick={speakQuote}
-          className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-slate-200 bg-slate-900 border border-slate-700 hover:border-cyan-400 rounded-lg transition-colors"
+          className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-slate-200 bg-slate-900 border border-slate-700 hover:border-sky-400 rounded-lg transition-colors"
         >
-          <Volume2 className="w-3.5 h-3.5 text-cyan-400" />
+          <Volume2 className="w-3.5 h-3.5 text-sky-400" />
           <span>Speech Audio</span>
         </button>
       </div>
@@ -352,7 +352,7 @@ const InspirixDemo: React.FC = () => {
 const PortfolioSelfDemo: React.FC = () => {
   return (
     <div className="max-w-md mx-auto p-6 rounded-2xl bg-slate-950 border border-slate-800 text-center">
-      <p className="text-xs font-mono text-cyan-400 mb-2">FLAGSHIP ARCHITECTURE</p>
+      <p className="text-xs font-mono text-sky-400 mb-2">FLAGSHIP ARCHITECTURE</p>
       <h4 className="text-lg font-bold text-white mb-2">Jimmy Nathan Portfolio</h4>
       <p className="text-xs text-slate-300 mb-4">
         You are currently experiencing this flagship portfolio live! Built with Vite, React, Tailwind CSS, and Framer Motion micro-interactions.

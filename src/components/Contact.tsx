@@ -73,13 +73,13 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col items-start mb-14">
-          <div className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2">
+          <div className="text-xs font-mono text-sky-400 uppercase tracking-widest mb-2">
             05. Initiation
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Let’s Build Something Exceptional
           </h2>
-          <p className="mt-3 text-slate-400 max-w-2xl text-base sm:text-lg">
+          <p className="mt-3 text-slate-300 max-w-2xl text-base sm:text-lg">
             Whether you have a specific mobile app or web platform in mind, need to optimize an existing system, or want to discuss full-time contract opportunities.
           </p>
         </div>
@@ -95,16 +95,16 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
 
               <div className="space-y-4">
                 {/* Email Item */}
-                <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-between group">
+                <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-sky-500/30 transition-all flex items-center justify-between group">
                   <div className="flex items-center gap-3 overflow-hidden">
-                    <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div className="overflow-hidden">
                       <p className="text-xs text-slate-400 font-mono">Email Address</p>
                       <a
                         href={`mailto:${PERSONAL_INFO.email}`}
-                        className="text-sm font-semibold text-white hover:text-cyan-300 truncate block"
+                        className="text-sm font-semibold text-white hover:text-sky-300 truncate block"
                       >
                         {PERSONAL_INFO.email}
                       </a>
@@ -112,7 +112,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
                   </div>
                   <button
                     onClick={() => handleCopy(PERSONAL_INFO.email, 'email')}
-                    className="p-2 text-slate-400 hover:text-cyan-400 hover:bg-slate-800 rounded-lg transition-colors shrink-0"
+                    className="p-2 text-slate-400 hover:text-sky-400 hover:bg-slate-800 rounded-lg transition-colors shrink-0"
                     title="Copy email to clipboard"
                     aria-label="Copy email"
                   >
@@ -158,7 +158,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
 
                 {/* Location Item */}
                 <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -170,7 +170,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
 
               {/* Working Hours / Availability Notice */}
               <div className="mt-6 pt-5 border-t border-slate-800 flex items-center gap-2.5 text-xs text-slate-400 font-mono">
-                <Clock className="w-4 h-4 text-cyan-400 shrink-0" />
+                <Clock className="w-4 h-4 text-sky-400 shrink-0" />
                 <span>Currently accepting contracts & full-time roles</span>
               </div>
             </div>
@@ -180,7 +180,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
               href={PERSONAL_INFO.socialLinks.whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="p-5 rounded-2xl bg-gradient-to-r from-emerald-950/40 to-teal-950/30 border border-emerald-500/30 hover:border-emerald-400/50 transition-all flex items-center justify-between group"
+              className="p-5 rounded-2xl bg-gradient-to-r from-emerald-950/40 to-slate-900 border border-emerald-500/30 hover:border-emerald-400/50 transition-all flex items-center justify-between group shadow-sm hover:shadow-lg hover:shadow-emerald-500/5"
             >
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
@@ -208,8 +208,8 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
               </p>
 
               {submitSuccess ? (
-                <div className="p-8 rounded-xl bg-cyan-950/30 border border-cyan-500/40 text-center animate-in fade-in">
-                  <div className="w-12 h-12 rounded-full bg-cyan-500/20 text-cyan-400 mx-auto flex items-center justify-center mb-4">
+                <div className="p-8 rounded-xl bg-sky-950/40 border border-sky-500/40 text-center animate-in fade-in">
+                  <div className="w-12 h-12 rounded-full bg-sky-500/20 text-sky-400 mx-auto flex items-center justify-center mb-4">
                     <Check className="w-6 h-6" />
                   </div>
                   <h4 className="text-lg font-bold text-white">Message Sent Successfully!</h4>
@@ -218,7 +218,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
                   </p>
                   <button
                     onClick={() => setSubmitSuccess(false)}
-                    className="mt-6 px-5 py-2 text-xs font-semibold text-slate-900 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-colors"
+                    className="mt-6 px-5 py-2 text-xs font-semibold text-slate-950 bg-sky-400 hover:bg-sky-300 rounded-lg transition-colors font-medium shadow-md shadow-sky-500/20"
                   >
                     Send Another Message
                   </button>
@@ -243,7 +243,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Alex Morgan"
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-sky-400 transition-colors"
                       />
                     </div>
 
@@ -258,7 +258,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="alex@company.com"
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-sky-400 transition-colors"
                       />
                     </div>
                   </div>
@@ -271,7 +271,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
                     <select
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-sky-400 transition-colors"
                     >
                       <option value="Full-Stack Web Development">Full-Stack Web Development</option>
                       <option value="Mobile App Development (iOS & Android)">Mobile App Development (iOS & Android)</option>
@@ -294,7 +294,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell me about your product requirements, timeline, or current challenges..."
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-sky-400 transition-colors resize-none"
                     />
                   </div>
 
@@ -303,7 +303,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject = '' }) => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-300 rounded-xl shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/35 hover:brightness-105 active:scale-[0.99] transition-all disabled:opacity-50"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-bold text-slate-950 bg-gradient-to-r from-sky-400 via-sky-300 to-blue-400 rounded-xl shadow-lg shadow-sky-500/20 hover:shadow-sky-500/35 hover:brightness-105 active:scale-[0.99] transition-all disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         <>
